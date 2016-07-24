@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Editor/css/wangEditor.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-2.2.4.js"></script>
+    <script src="~/Editor/js/wangEditor.js"></script>
+</head>
+<body>
+    <div id="editor">
+       请输入内容...
+    </div>
+    <script type="text/javascript">
+        var editor = new wangEditor('editor');
+        editor.config.uploadImgUrl = '/Editor/EditorUpload.ashx';
+        editor.create();
+    </script>
+</body>
+</html>

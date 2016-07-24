@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/MyTools/mytool.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-2.2.4.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+    <script src="~/Scripts/Scripts/script-angular.js"></script>
+    <script src="~/MyTools/mytool.js"></script>
+</head>
+<body ng-app="app">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="#/Page1">Page1</a></li>
+                    <li class="list-group-item"><a href="#/Page2">Page2</a></li>
+                    <li class="list-group-item"><a href="#/Page3">Page3</a></li>
+                    <li class="list-group-item"><a href="#/Page4">Page4</a></li>
+                </ul>
+            </div>
+            <div class="col-md-10" ng-view></div>
+        </div> 
+    </div>
+</body>
+</html>
