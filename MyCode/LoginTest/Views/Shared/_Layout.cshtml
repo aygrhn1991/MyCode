@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width" />
+
+    <meta property="qc:admins" content="4556374416667273633" />
+    <meta property="wb:webmaster" content="4cdf11c92f3c1d3d" />
+    <meta property="qh.webmaster" content="578cddb844b37" />
+
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-2.2.4.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/qrcode.js"></script>
+    <script src="~/Scripts/jquery.qrcode.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.1.2.js"></script>
+    <script src="~/signalr/hubs"></script>
+
+    <script>
+        var urlbase = window.location.protocol + '//' + window.location.host;
+        $(function () {
+            var chat = $.connection.weChatHub;
+            chat.client.callback = function (d) {
+                switch (d) {
+                    case 'waiting-authorize':
+                        $('#result').text('请在手机上授权');
+                        break;
+                    case 'getting-userinfo':
+                        $('#result').text('获取信息中···');
+                        break;
+                    case 'success':
+                        $('#result').text('操作成功，等待跳转');
+                        window.location.href = '/Home/Index';
+                        break;
+                    case 'newuser':
+                        $('#result').text('操作成功，等待跳转');
+                        window.location.href = '/Home/Index';
+                        break;
+                    case 'failed':
+                        $('#result').text('操作失败，请重新尝试');
+                        break;
+                }
+            }
+            $.connection.hub.start().done(function (e) {
+                var requestUrl = urlbase + '/wechat-scan?hubId=' + encodeURIComponent(e.id);
+                $('#code').qrcode({
+                    width: 200,
+                    height: 200,
+                    text: requestUrl,
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    @RenderBody()
+</body>
+</html>
