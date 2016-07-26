@@ -79,7 +79,7 @@ function showMessage(e) {
     if ($('#alert-message').length > 0) {
         $('#alert-message').remove();
     }
-    var _mask = '<div id="alert-message">\
+    var mask = '<div id="alert-message">\
             <div></div>\
             <div>\
                 <div id="alert-message-tip">\
@@ -92,11 +92,63 @@ function showMessage(e) {
                     <div></div>\
                     <div></div>\
                 </div>\
-                <div>' + (typeof e == 'undefined'?'处理中，请等待！':e) + '</div>\
+                <div>' + (typeof e == 'undefined' ? '处理中，请等待！' : e) + '</div>\
             </div>\
         </div>';
-    $('body').append(_mask);   
+    $('body').append(mask);
 };
 function hideMessage() {
     $('#alert-message').remove();
 };
+
+function checkNumber(data, showalert, message) {
+    var reg = new RegExp('^[0-9]+(.[0-9]+)?$');
+    if (reg.test(data) == true) {
+        return true;
+    } else {
+        if (showalert == true) {
+            typeof message == 'undefined' ? alert('不是数字') : alert(message);
+        }
+        return false;
+    }
+};
+function checkEmail(data, showalert, message) {
+    var reg = new RegExp('^([a-zA-Z0-9_\.\-]+)@([a-zA-Z0-9_\.\-]+)\.([a-zA-Z]{2,4})$');
+    if (reg.test(data) == true) {
+        return true;
+    } else {
+        if (showalert == true) {
+            typeof message == 'undefined' ? alert('不是Email格式') : alert(message);
+        }
+        return false;
+    }
+};
+function checkNullOrUndefined(data, showalert, message) {
+    if (data == null) {
+        if (showalert == true) {
+            typeof message == 'undefined' ? alert('该值为null') : alert(message);
+        }
+        return true;
+    } else if (typeof data == 'undefined') {
+        if (showalert == true) {
+            typeof message == 'undefined' ? alert('该值为undefined') : alert(message);
+        }
+        return true;
+    } else {
+        return false;
+    }
+};
+function checkEmpty(data, showalert, message) {
+    if (data.length ==0||data=='') {
+        if (showalert == true) {
+            typeof message == 'undefined' ? alert('空值') : alert(message);
+        }
+        return true;
+    } else {
+        return false;
+    }
+};
+var s = '123';
+var r = checkEmpty(s, true);
+console.log(r);
+console.log('go');
