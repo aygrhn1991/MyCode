@@ -83,7 +83,8 @@ function showMessage(e) {
             <div></div>\
             <div>\
                 <div id="alert-message-tip">\
-                    <div></div><div></div>\
+                    <div></div>\
+                    <div></div>\
                     <div></div>\
                     <div></div>\
                     <div></div>\

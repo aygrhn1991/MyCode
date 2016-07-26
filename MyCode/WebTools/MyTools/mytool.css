@@ -109,8 +109,182 @@
         transform: rotate(360deg);
     }
 }
+/*----------Store----------*/
+.store-gradient-single {
+    /*双色简单*/
+    background: -webkit-linear-gradient(red, blue);
+    background: -o-linear-gradient(red, blue);
+    background: -moz-linear-gradient(red, blue);
+    background: linear-gradient(red, blue);
+    /*双色单向*/
+    background: -webkit-linear-gradient(left, red, blue);
+    background: -o-linear-gradient(right, red, blue);
+    background: -moz-linear-gradient(right, red, blue);
+    background: linear-gradient(to right, red, blue);
+    /*双色斜向*/
+    background: -webkit-linear-gradient(left top, red, blue);
+    background: -o-linear-gradient(bottom right, red, blue);
+    background: -moz-linear-gradient(bottom right, red, blue);
+    background: linear-gradient(to bottom right, red, blue);
+    /*双色角度*/
+    background: -webkit-linear-gradient(180deg, red, blue);
+    background: -o-linear-gradient(180deg, red, blue);
+    background: -moz-linear-gradient(180deg, red, blue);
+    background: linear-gradient(180deg, red, blue);
+}
 
+.store-gradient-multi {
+    /*多色简单*/
+    background: -webkit-linear-gradient(red,orange,yellow,green,blue,indigo,violet);
+    background: -o-linear-gradient(red,orange,yellow,green,blue,indigo,violet);
+    background: -moz-linear-gradient(red,orange,yellow,green,blue,indigo,violet);
+    background: linear-gradient(red,orange,yellow,green,blue,indigo,violet);
+    /*多色单向*/
+    background: -webkit-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
+    background: -o-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
+    background: -moz-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
+    background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+    /*多色距起点距离（第一个为起始点，最后一个为终止点，剩余部分重复）*/
+    background: -webkit-repeating-linear-gradient(red, yellow 10%, green 20%);
+    background: -o-repeating-linear-gradient(red, yellow 10%, green 20%);
+    background: -moz-repeating-linear-gradient(red, yellow 10%, green 20%);
+    background: repeating-linear-gradient(red, yellow 10%, green 20%);
+}
+
+.store-gradient-circle-single {
+    /*双色简单*/
+    background: -webkit-radial-gradient(red, blue);
+    background: -o-radial-gradient(red, blue);
+    background: -moz-radial-gradient(red, blue);
+    background: radial-gradient(red, blue);
+}
+
+.store-gradient-circle-multi {
+    /*多色简单*/
+    background: -webkit-radial-gradient(red, green, blue);
+    background: -o-radial-gradient(red, green, blue);
+    background: -moz-radial-gradient(red, green, blue);
+    background: radial-gradient(red, green, blue);
+    /*多色距起点距离（第一个为起始点，最后一个为渐变终止点，剩余部分用最后的颜色填充）*/
+    background: -webkit-radial-gradient(red 5%, green 15%, blue 60%);
+    background: -o-radial-gradient(red 5%, green 15%, blue 60%);
+    background: -moz-radial-gradient(red 5%, green 15%, blue 60%);
+    background: radial-gradient(red 5%, green 15%, blue 60%);
+    /*多色形状*/
+    background: -webkit-radial-gradient(circle, red, yellow, green);
+    background: -o-radial-gradient(circle, red, yellow, green);
+    background: -moz-radial-gradient(circle, red, yellow, green);
+    background: radial-gradient(circle, red, yellow, green);
+    /*宽度及偏移量*/
+    background: -webkit-radial-gradient(60% 55%, closest-side,blue,green,yellow,black);
+    background: -o-radial-gradient(60% 55%, closest-side,blue,green,yellow,black);
+    background: -moz-radial-gradient(60% 55%, closest-side,blue,green,yellow,black);
+    background: radial-gradient(60% 55%, closest-side,blue,green,yellow,black);
+    /*多色重复*/
+    background: -webkit-repeating-radial-gradient(red, yellow 10%, green 15%);
+    background: -o-repeating-radial-gradient(red, yellow 10%, green 15%);
+    background: -moz-repeating-radial-gradient(red, yellow 10%, green 15%);
+    background: repeating-radial-gradient(red, yellow 10%, green 15%);
+}
+/*----------Tool----------*/
 html, body {
     padding: 0;
     margin: 0;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.no-margin-top {
+    margin-top: 0;
+}
+
+.no-margin-right {
+    margin-right: 0;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+.no-margin-left {
+    margin-left: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.no-padding-top {
+    padding-top: 0;
+}
+
+.no-padding-right {
+    padding-right: 0;
+}
+
+.no-padding-bottom {
+    padding-bottom: 0;
+}
+
+.no-padding-left {
+    padding-left: 0;
+}
+
+.ellipsis {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ellipsis-multi-row {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.a-clean,
+.a-clean:active,
+.a-clean:hover,
+.a-clean:focus,
+.a-clean:visited {
+    text-decoration: none;
+}
+
+.display-block {
+    display: block;
+}
+.pointer{
+    cursor:pointer;
+}
+.color-white {
+    color: white;
+}
+
+.color-black {
+    color: black;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
 }
